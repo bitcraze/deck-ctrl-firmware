@@ -1,0 +1,200 @@
+[
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles/deck-control-firmware.dir/Core/Src/main.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/main.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/main.c",
+  "output": "CMakeFiles/deck-control-firmware.dir/Core/Src/main.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles/deck-control-firmware.dir/Core/Src/stm32c0xx_it.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/stm32c0xx_it.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/stm32c0xx_it.c",
+  "output": "CMakeFiles/deck-control-firmware.dir/Core/Src/stm32c0xx_it.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles/deck-control-firmware.dir/Core/Src/stm32c0xx_hal_msp.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/stm32c0xx_hal_msp.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/stm32c0xx_hal_msp.c",
+  "output": "CMakeFiles/deck-control-firmware.dir/Core/Src/stm32c0xx_hal_msp.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles/deck-control-firmware.dir/Core/Src/sysmem.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/sysmem.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/sysmem.c",
+  "output": "CMakeFiles/deck-control-firmware.dir/Core/Src/sysmem.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o CMakeFiles/deck-control-firmware.dir/Core/Src/syscalls.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/syscalls.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/syscalls.c",
+  "output": "CMakeFiles/deck-control-firmware.dir/Core/Src/syscalls.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -x assembler-with-cpp -MMD -MP -g -o CMakeFiles/deck-control-firmware.dir/startup_stm32c011xx.s.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/startup_stm32c011xx.s",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/startup_stm32c011xx.s",
+  "output": "CMakeFiles/deck-control-firmware.dir/startup_stm32c011xx.s.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32c0xx.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/system_stm32c0xx.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Src/system_stm32c0xx.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32c0xx.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_gpio.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_gpio.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_gpio.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_gpio.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_exti.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_exti.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_exti.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_exti.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_rcc.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_rcc.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_rcc.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_rcc.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_utils.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_utils.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_utils.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_utils.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_i2c.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_i2c.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_i2c.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_i2c.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_dma.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_dma.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_dma.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_ll_dma.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_spi_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c.obj"
+},
+{
+  "directory": "/home/macke/dev/bitcraze/private/deck-control-firmware",
+  "command": "/usr/bin/arm-none-eabi-gcc -DDEBUG -DSTM32C011xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -I/home/macke/dev/bitcraze/private/deck-control-firmware/Core/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Device/ST/STM32C0xx/Include -I/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/CMSIS/Include  -mcpu=cortex-m0plus  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11 -o cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c.obj -c /home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c",
+  "file": "/home/macke/dev/bitcraze/private/deck-control-firmware/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c",
+  "output": "cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c.obj"
+}
+]
