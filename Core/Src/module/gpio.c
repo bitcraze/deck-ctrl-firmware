@@ -34,6 +34,8 @@ typedef struct {
 } gpio_entry_t;
 
 static gpio_entry_t gpio_map[] = {
+    {GPIOA, GPIO_PIN_0}, // GPIOA0
+    {GPIOA, GPIO_PIN_1}, // GPIOA1
     {GPIOA, GPIO_PIN_2}, // GPIOA2
     {GPIOA, GPIO_PIN_3}, // GPIOA3
     {GPIOA, GPIO_PIN_4}, // GPIOA4
