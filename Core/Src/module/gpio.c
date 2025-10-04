@@ -34,19 +34,19 @@ typedef struct {
 } gpio_entry_t;
 
 static gpio_entry_t gpio_map[] = {
-    {GPIOA, GPIO_PIN_0}, // GPIOA0
-    {GPIOA, GPIO_PIN_1}, // GPIOA1
-    {GPIOA, GPIO_PIN_2}, // GPIOA2
-    {GPIOA, GPIO_PIN_3}, // GPIOA3
-    {GPIOA, GPIO_PIN_4}, // GPIOA4
-    {GPIOA, GPIO_PIN_5}, // GPIOA5
-    {GPIOA, GPIO_PIN_6}, // GPIOA6
-    {GPIOA, GPIO_PIN_7}, // GPIOA7
-    {GPIOA, GPIO_PIN_8}, // GPIOA8
-    {GPIOA, GPIO_PIN_11}, // GPIOA11
-    {GPIOA, GPIO_PIN_12}, // GPIOA12
-    {GPIOC, GPIO_PIN_14}, // GPIOC14
-    {GPIOC, GPIO_PIN_15} // GPIOC15
+    {GPIOA, GPIO_PIN_0},  // GPIO_0
+    {GPIOA, GPIO_PIN_1},  // GPIO_1
+    {GPIOA, GPIO_PIN_2},  // GPIO_2
+    {GPIOA, GPIO_PIN_3},  // GPIO_3
+    {GPIOA, GPIO_PIN_4},  // GPIO_4
+    {GPIOA, GPIO_PIN_5},  // GPIO_5
+    {GPIOA, GPIO_PIN_6},  // GPIO_6
+    {GPIOA, GPIO_PIN_7},  // GPIO_7
+    {GPIOA, GPIO_PIN_8},  // GPIO_8
+    {GPIOA, GPIO_PIN_11}, // GPIO_9
+    {GPIOA, GPIO_PIN_12}, // GPIO_10
+    {GPIOC, GPIO_PIN_14}, // GPIO_11
+    {GPIOC, GPIO_PIN_15}  // GPIO_12
 };
 
 #define GPIO_DIR_START ((uint16_t)0x00)
