@@ -152,16 +152,33 @@ Debug printing is disabled by default. To enable:
 
 **Warning**: Debug prints in I2C ISR require reducing I2C speed to ~10kHz to prevent system overload.
 
-### BOOT0 Configuration
+### Initial configuration of option bytes
 
 For first-time programming, the BOOT0 pin must be enabled (factory default disables it):
 
 ```bash
-# Display current option bytes
-STM32_Programmer_CLI --connect port=swd -ob rdp=0x0 -ob displ
+STM32_Programmer_CLI -c port=SWD mode=UR -ob RDP=0xAA -ob nBOOT_SEL=0
+```
 
-# Enable BOOT0 pin (set nBOOT_SEL=0)
-STM32_Programmer_CLI --connect port=swd -ob rdp=0x0 -ob nBOOT_SEL=0
+### Deck configuration
+
+The configuration can be written using the [cfcli](https://github.com/evoggy/cfcli) tool. First create
+the desired configuration YAML file:
+
+```yaml
+version_major: 0
+version_minor: 1
+vid: 0xBC
+pid: 0x13
+rev: 'B'
+name: 'HP LED'
+partitions: []
+```
+
+Then use cfcli tool to flash the configuration via SWD:
+
+```bash
+cfcli util deck-ctrl binflash deck-ctrl.yaml
 ```
 
 ### VS Code Integration
