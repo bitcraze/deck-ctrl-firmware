@@ -44,10 +44,23 @@ The firmware implements the following capabilities:
 
 ### GPIO Pin Mapping
 
-The firmware controls 11 GPIO pins through memory-mapped registers. Each bit in the 16-bit GPIO registers corresponds to one pin:
+The firmware controls 13 GPIO pins through memory-mapped registers. Each bit in the 16-bit GPIO registers corresponds to one pin:
 
-**GPIOA pins**: PA2, PA3, PA4, PA5, PA6, PA7, PA8, PA11, PA12 (bits 0-8)
-**GPIOC pins**: PC14, PC15 (bits 9-10)
+| GPIO Index | Physical Pin | Description |
+|------------|--------------|-------------|
+| 0 | PA0 | GPIO pin 0 |
+| 1 | PA1 | GPIO pin 1 |
+| 2 | PA2 | GPIO pin 2 |
+| 3 | PA3 | GPIO pin 3 |
+| 4 | PA4 | GPIO pin 4 |
+| 5 | PA5 | GPIO pin 5 |
+| 6 | PA6 | GPIO pin 6 |
+| 7 | PA7 | GPIO pin 7 |
+| 8 | PA8 | GPIO pin 8 |
+| 9 | PA11 | GPIO pin 9 |
+| 10 | PA12 | GPIO pin 10 |
+| 11 | PC14 | GPIO pin 11 |
+| 12 | PC15 | GPIO pin 12 |
 
 The GPIO control uses two 16-bit registers:
 - **Direction register (0x1000-0x1001)**: Controls pin direction (1=output, 0=input)
