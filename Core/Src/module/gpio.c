@@ -56,12 +56,14 @@ static gpio_entry_t gpio_map[] = {
 
 // Cache for GPIO direction (1=output, 0=input)
 static uint16_t gpio_direction_cache = 0x0000; // Initialize all as inputs
+static uint16_t gpio_data_cache = 0x0000; // Cache for GPIO output data
 
 void gpio_module_init(void)
 {
     // GPIO clocks are already enabled in main.c
     // Initialize all GPIOs as inputs
     gpio_direction_cache = 0x0000;
+    gpio_data_cache = 0;
 
     // Configure all pins as inputs
     for (uint8_t i = 0; i < sizeof(gpio_map) / sizeof(gpio_entry_t); i++) {
@@ -99,7 +101,20 @@ uint8_t gpio_module_read(uint16_t address)
         for (uint8_t i = 0; i < 8; i++) {
             if (gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t))
             {
-                if (HAL_GPIO_ReadPin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin) == GPIO_PIN_SET)
+                uint8_t is_output = (gpio_direction_cache >> gpio_index) & 0x01;
+                GPIO_PinState pin_state;
+
+                if (is_output) {
+                    // If pin is output, read the output we've set before
+                    // printf("Getting GPIO %d as output, mask is 0x%04X\n", gpio_index, gpio_direction_cache);
+                    pin_state = ((gpio_data_cache >> gpio_index) & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+                } else {
+                    // If pin is input, read the actual pin state
+                    // printf("Reading GPIO %d as input, mask is 0x%04X\n", gpio_index, gpio_direction_cache);
+                    pin_state = HAL_GPIO_ReadPin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin);
+                }
+              
+                if (pin_state == GPIO_PIN_SET)
                 {
                     result |= (1 << i);
                 }
@@ -120,7 +135,6 @@ void gpio_module_write(uint16_t address, uint8_t value)
     {
         // Write to GPIO direction and update cache
         uint8_t gpio_addr = (uint8_t)(address - GPIO_DIR_START);
-        uint8_t gpio_index = gpio_addr == 0 ? 0 : 8; // Start at 8 if it's the high byte
 
         // Update the cache
         if (gpio_addr == 0) {
@@ -129,31 +143,14 @@ void gpio_module_write(uint16_t address, uint8_t value)
             gpio_direction_cache = (gpio_direction_cache & 0x00FF) | ((uint16_t)value << 8); // Update high byte
         }
 
-        for (uint8_t i = 0; i < 8; i++) {
-            if (gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t))
-            {
-                uint8_t gpio_dir = (value >> i) & 0x01;
-
-                if (gpio_dir == 1)
-                {
-                    GPIO_InitTypeDef GPIO_InitStruct;
-                    GPIO_InitStruct.Pin = gpio_map[gpio_index].pin;
-                    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-                    GPIO_InitStruct.Pull = GPIO_NOPULL;
-                    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-                    HAL_GPIO_Init(gpio_map[gpio_index].port, &GPIO_InitStruct);
-                }
-                else
-                {
-                    GPIO_InitTypeDef GPIO_InitStruct;
-                    GPIO_InitStruct.Pin = gpio_map[gpio_index].pin;
-                    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-                    GPIO_InitStruct.Pull = GPIO_NOPULL;
-                    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-                    HAL_GPIO_Init(gpio_map[gpio_index].port, &GPIO_InitStruct);
-                }
-            }
-            gpio_index++;
+        for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
+            uint8_t gpio_dir = (gpio_direction_cache >> gpio_index) & 0x01;
+            GPIO_InitTypeDef GPIO_InitStruct;
+            GPIO_InitStruct.Pin = gpio_map[gpio_index].pin;
+            GPIO_InitStruct.Mode = gpio_dir ? GPIO_MODE_OUTPUT_PP : GPIO_MODE_INPUT;
+            GPIO_InitStruct.Pull = GPIO_NOPULL;
+            GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+            HAL_GPIO_Init(gpio_map[gpio_index].port, &GPIO_InitStruct);
         }
     }
 
@@ -161,23 +158,20 @@ void gpio_module_write(uint16_t address, uint8_t value)
     {
         // Write to GPIO data
         uint8_t gpio_addr = (uint8_t)(address - GPIO_DATA_START);
-        uint8_t gpio_index = gpio_addr == 0 ? 0 : 8; // Start at 8 if it's the high byte
 
-        for (uint8_t i = 0; i < 8; i++) {
-            if (gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t))
-            {
-                uint8_t gpio_value = (value >> i) & 0x01;
-
-                if (gpio_value == 1)
-                {
-                    HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, GPIO_PIN_SET);
-                }
-                else
-                {
-                    HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, GPIO_PIN_RESET);
-                }
-            }
-            gpio_index++;
+        // Update the cache
+        if (gpio_addr == 0) {
+            gpio_data_cache = (gpio_data_cache & 0xFF00) | value; // Update low byte
+        } else {
+            gpio_data_cache = (gpio_data_cache & 0x00FF) | ((uint16_t)value << 8); // Update high byte
+        }
+        
+        for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
+            uint8_t is_output = (gpio_direction_cache >> gpio_index) & 0x01;
+              if (is_output) {
+                  uint8_t gpio_value = (gpio_data_cache >> gpio_index) & 0x01;  
+                  HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, gpio_value == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
+              }            
         }
     }
 }
