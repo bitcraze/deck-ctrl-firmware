@@ -106,11 +106,9 @@ uint8_t gpio_module_read(uint16_t address)
 
                 if (is_output) {
                     // If pin is output, read the output we've set before
-                    // printf("Getting GPIO %d as output, mask is 0x%04X\n", gpio_index, gpio_direction_cache);
                     pin_state = ((gpio_data_cache >> gpio_index) & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET;
                 } else {
                     // If pin is input, read the actual pin state
-                    // printf("Reading GPIO %d as input, mask is 0x%04X\n", gpio_index, gpio_direction_cache);
                     pin_state = HAL_GPIO_ReadPin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin);
                 }
               
