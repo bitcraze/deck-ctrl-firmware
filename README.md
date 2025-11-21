@@ -175,23 +175,12 @@ STM32_Programmer_CLI -c port=SWD mode=UR -ob RDP=0xAA -ob nBOOT_SEL=0
 
 ### Deck configuration
 
-The configuration can be written using the [cfcli](https://github.com/evoggy/cfcli) tool. First create
-the desired configuration YAML file:
-
-```yaml
-version_major: 0
-version_minor: 1
-vid: 0xBC
-pid: 0x13
-rev: 'B'
-name: 'HP LED'
-partitions: []
-```
-
-Then use cfcli tool to flash the configuration via SWD:
+The configuration can be written using the [cfcli](https://github.com/evoggy/cfcli) tool. Flash a configuration via SWD:
 
 ```bash
-cfcli util deck-ctrl binflash deck-ctrl.yaml
+cfcli util deck-ctrl binflash configs/bottom_config.yaml
+# or
+cfcli util deck-ctrl binflash configs/top_config.yaml
 ```
 
 ### VS Code Integration
