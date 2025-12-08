@@ -1,0 +1,24 @@
+// Enable BOOT0 pin script.
+device STM32C011F4
+if SWD
+speed auto
+
+reset
+// enable writing to flash
+w4 0x40022008 0x45670123
+w4 0x40022008 0xCDEF89AB
+
+// Unlock option bytes
+w4 0x4002200C 0x08192A3B
+w4 0x4002200C 0x4C5D6E7F
+
+// Write new option byte to enable BOOT0
+w4 0x40022020 0xFEFFFFAA // Write to Flash interface reg
+w4 0x40022014 0x00020000 // Set OPTSTART to compute and update complemented option bytes
+mem32 0x1FFF7800 1       // Read changes
+
+// Lock option bytes
+w4 0x40022014 0xC0000000
+
+reset
+q

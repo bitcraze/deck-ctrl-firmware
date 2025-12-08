@@ -1,0 +1,8 @@
+[package]
+name = "boot0"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+probe-rs = "0.30" # Use the latest version
+anyhow = "1.0"
