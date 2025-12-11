@@ -1,0 +1,42 @@
+name: build
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+
+    - name: Install ARM GCC toolchain
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-arm-none-eabi
+
+    - name: Verify toolchain installation
+      run: |
+        arm-none-eabi-gcc --version
+
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build firmware
+      run: cmake --build build
+
+    - name: Verify binary generation
+      run: |
+        ls -lh build/
+        file build/deck-control-firmware.bin
+
+    - name: Upload binary artifact
+      uses: actions/upload-artifact@v5
+      with:
+        name: deck-control-firmware-binary
+        path: build/deck-control-firmware.bin
