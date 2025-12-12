@@ -3,5 +3,5 @@ version_minor: 1
 vid: 0xBC
 pid: 0x14
 rev: 'B'
-name: 'bcColorLEDTop'
+name: 'bcColorLedTop'
 partitions: []
