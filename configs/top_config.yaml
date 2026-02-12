@@ -4,4 +4,6 @@ vid: 0xBC
 pid: 0x14
 rev: 'B'
 name: 'bcColorLedTop'
+manufactured: '2026-01-20'
+checksum: 0x1A
 partitions: []
