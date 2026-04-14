@@ -81,6 +81,31 @@ int _write(int file, char *ptr, int len) {
     return len;
 }
 
+/**
+ * @brief  Disable Brown-Out Reset (BOR) if it is currently enabled in the option bytes.
+ */
+static void disable_bor_if_enabled(void) {
+    if (FLASH->OPTR & FLASH_OPTR_BOR_EN) {
+        FLASH_OBProgramInitTypeDef ob_cfg = {0};
+
+        HAL_FLASH_Unlock();
+        HAL_FLASH_OB_Unlock();
+
+        ob_cfg.OptionType = OPTIONBYTE_USER;
+        ob_cfg.USERType = OB_USER_BOR_EN;
+        ob_cfg.USERConfig = OB_BOR_DISABLE;
+
+        HAL_FLASHEx_OBProgram(&ob_cfg);
+
+        /* Launch option byte reload - this triggers a system reset */
+        HAL_FLASH_OB_Launch();
+
+        /* Should not reach here as OB_Launch resets the MCU */
+        HAL_FLASH_OB_Lock();
+        HAL_FLASH_Lock();
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -100,6 +125,9 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
+  /* Disable BOR in option bytes if it is currently enabled */
+  disable_bor_if_enabled();
 
   /* USER CODE END Init */
 
