@@ -33,6 +33,7 @@
 #include "module/rom.h"
 #include "module/cpuid.h"
 #include "module/scratchpad.h"
+#include "module/spi.h"
 
 
 #define ROM_MEMORY_MASK 0x0FFF
@@ -47,6 +48,9 @@
 #define SCRATCHPAD_MEMORY_START 0x1F00
 #define SCRATCHPAD_MEMORY_MASK 0x00FF
 
+#define SPI_MEMORY_START 0x2000
+#define SPI_MEMORY_MASK 0x0FFF
+
 static uint8_t i2c_address = I2C_ADDR_DISCOVERY >> 1;
 static bool i2c_address_updated = false;
 
@@ -56,6 +60,7 @@ void memory_init(void)
   rom_module_init();
   cpuid_module_init();
   scratchpad_module_init();
+  spi_module_init();
 }
 
 void memory_set_i2c_address(uint8_t address)
@@ -105,6 +110,12 @@ uint8_t memory_read(uint16_t address)
     return scratchpad_module_read(address & SCRATCHPAD_MEMORY_MASK);
   }
 
+  // SPI bridge - 0x2000-0x2FFF
+  if ((address & 0xF000) == SPI_MEMORY_START)
+  {
+    return spi_module_read(address & SPI_MEMORY_MASK);
+  }
+
   return 0x00;
 }
 
@@ -124,6 +135,13 @@ void memory_write(uint16_t address, uint8_t value)
     return;
   }
 
+  // SPI bridge - 0x2000-0x2FFF
+  if ((address & 0xF000) == SPI_MEMORY_START)
+  {
+    spi_module_write(address & SPI_MEMORY_MASK, value);
+    return;
+  }
+
   // I2C address update
   if (address == I2C_ADDRESS_UPDATE_REGISTER)
   {
@@ -131,4 +149,9 @@ void memory_write(uint16_t address, uint8_t value)
     DBG_PRINT("I2C address updated to: 0x%02X\n", i2c_address);
     i2c_address_updated = true;
   }
+}
+
+void memory_on_stop(void)
+{
+  spi_module_on_stop();
 }

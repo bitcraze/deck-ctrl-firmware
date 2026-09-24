@@ -34,3 +34,9 @@
 uint8_t gpio_module_read(uint16_t address);
 void gpio_module_write(uint16_t address, uint8_t value);
 void gpio_module_init(void);
+
+// Take pins out of GPIO control (bit per GPIO index), used when a pin is used by a peripheral
+void gpio_module_reserve(uint16_t mask);
+
+// Give pins back to GPIO control and restore their configured direction and value
+void gpio_module_release(uint16_t mask);

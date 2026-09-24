@@ -52,6 +52,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/module/rom.c
     Core/Src/module/cpuid.c
     Core/Src/module/scratchpad.c
+    Core/Src/module/spi.c
 )
 
 # Add include paths

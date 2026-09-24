@@ -292,6 +292,7 @@ void I2C1_IRQHandler(void)
         LL_I2C_SetOwnAddress1(I2C1, new_addr << 1, LL_I2C_OWNADDRESS1_7BIT);
         LL_I2C_EnableOwnAddress1(I2C1);
       }
+      memory_on_stop();
     }
 
   }
