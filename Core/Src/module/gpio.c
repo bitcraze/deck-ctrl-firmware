@@ -164,12 +164,11 @@ void gpio_module_write(uint16_t address, uint8_t value)
             gpio_data_cache = (gpio_data_cache & 0x00FF) | ((uint16_t)value << 8); // Update high byte
         }
         
+        // Inputs get their level too: the output latch keeps it, so a pin made an
+        // output afterwards comes up at the level it was given instead of an old one
         for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
-            uint8_t is_output = (gpio_direction_cache >> gpio_index) & 0x01;
-              if (is_output) {
-                  uint8_t gpio_value = (gpio_data_cache >> gpio_index) & 0x01;  
-                  HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, gpio_value == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
-              }            
+            uint8_t gpio_value = (gpio_data_cache >> gpio_index) & 0x01;
+            HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, gpio_value == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
         }
     }
 }
