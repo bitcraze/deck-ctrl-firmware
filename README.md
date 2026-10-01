@@ -64,7 +64,7 @@ The firmware controls 13 GPIO pins through memory-mapped registers. Each bit in 
 
 The GPIO control uses two 16-bit registers:
 - **Direction register (0x1000-0x1001)**: Controls pin direction (1=output, 0=input)
-- **Data register (0x1002-0x1003)**: Controls pin values for outputs, reads pin states for inputs
+- **Data register (0x1002-0x1003)**: Controls pin values, reads pin states for inputs. A value written to an input is kept and used when the pin is made an output, so writing the value before the direction switches a pin to output without a glitch
 
 ### I2C Protocol
 
