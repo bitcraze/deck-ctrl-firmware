@@ -165,13 +165,16 @@ Debug printing is disabled by default. To enable:
 
 **Warning**: Debug prints in I2C ISR require reducing I2C speed to ~10kHz to prevent system overload.
 
-### Initial configuration of option bytes
+### Option bytes
 
-For first-time programming, the BOOT0 pin must be enabled (factory default disables it):
+No manual option byte configuration is needed. At startup the firmware checks the option bytes and, if needed, updates them:
 
-```bash
-STM32_Programmer_CLI -c port=SWD mode=UR -ob RDP=0xAA -ob nBOOT_SEL=0
-```
+- `BOR_EN = 0` - Brown-out reset disabled
+- `nBOOT_SEL = 0` - BOOT0 is taken from the PA14-BOOT0 pin (the factory default ignores the pin), so the Crazyflie can put the deck controller into the bootloader
+
+The option bytes are only written when a setting differs, followed by a single reset to load them. This happens once, on the first boot of a new chip.
+
+A blank chip boots straight into the system bootloader (empty flash check), so it can be programmed without changing the option bytes first.
 
 ### Deck configuration
 

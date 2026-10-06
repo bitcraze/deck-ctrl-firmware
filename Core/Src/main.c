@@ -82,18 +82,35 @@ int _write(int file, char *ptr, int len) {
 }
 
 /**
- * @brief  Disable Brown-Out Reset (BOR) if it is currently enabled in the option bytes.
+ * @brief  Update the option bytes if needed:
+ *         - Disable Brown-Out Reset (BOR) if it is currently enabled.
+ *         - Take BOOT0 from the PA14-BOOT0 pin (factory default ignores the pin),
+ *           so the Crazyflie can put the deck controller into the bootloader.
+ *         Only written when a setting differs, so this is a no-op on normal boots.
  */
-static void disable_bor_if_enabled(void) {
+static void configure_option_bytes(void) {
+    uint32_t user_type = 0;
+    uint32_t user_config = 0;
+
     if (FLASH->OPTR & FLASH_OPTR_BOR_EN) {
+        user_type |= OB_USER_BOR_EN;
+        user_config |= OB_BOR_DISABLE;
+    }
+
+    if (FLASH->OPTR & FLASH_OPTR_nBOOT_SEL) {
+        user_type |= OB_USER_NBOOT_SEL;
+        user_config |= OB_BOOT0_FROM_PIN;
+    }
+
+    if (user_type != 0) {
         FLASH_OBProgramInitTypeDef ob_cfg = {0};
 
         HAL_FLASH_Unlock();
         HAL_FLASH_OB_Unlock();
 
         ob_cfg.OptionType = OPTIONBYTE_USER;
-        ob_cfg.USERType = OB_USER_BOR_EN;
-        ob_cfg.USERConfig = OB_BOR_DISABLE;
+        ob_cfg.USERType = user_type;
+        ob_cfg.USERConfig = user_config;
 
         HAL_FLASHEx_OBProgram(&ob_cfg);
 
@@ -126,8 +143,8 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-  /* Disable BOR in option bytes if it is currently enabled */
-  disable_bor_if_enabled();
+  /* Disable BOR and enable the BOOT0 pin in option bytes if not already set */
+  configure_option_bytes();
 
   /* USER CODE END Init */
 
