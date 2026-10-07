@@ -14,7 +14,7 @@ The firmware implements the following capabilities:
 - Bridge from I2C to various peripherals
   - [X] GPIO - Used to set GPIO direction and read/write GPIO pins
   - [ ] UART
-  - [ ] SPI
+  - [X] SPI - Buffered SPI master transfers, e.g. for programming an SPI flash on the deck
   - [ ] ADC
   - [ ] PWM
 
@@ -41,6 +41,14 @@ The firmware implements the following capabilities:
 | 0x1900-0x190B | CPU unique ID | R | CPU ID | 12-byte unique device serial number |
 | **Test Area** | | | | **Development and validation** |
 | 0x1F00-0x1F0F | Scratchpad | R/W | 0x00 | 16-byte test memory area |
+| **SPI Bridge** | | | | **SPI master on SPI1, see [SPI Bridge](#spi-bridge)** |
+| 0x2000 | Control | R/W | 0x00 | bit0 enable, bit1 CPOL, bit2 CPHA, bit5:3 baud rate (fPCLK/2^(n+1)) |
+| 0x2001 | Status | R | 0x00 | bit0 CS asserted, bit1 last transfer failed |
+| 0x2002-0x2003 | Buffer size | R | 512 | Size of the transfer buffer (little endian) |
+| 0x20FB-0x20FC | TX length | R/W | 0 | Bytes to send from the buffer (little endian) |
+| 0x20FD-0x20FE | RX length | R/W | 0 | Bytes to clock with 0xFF after the TX bytes (little endian) |
+| 0x20FF | Execute | R/W | 0x00 | bit0 run a transfer, bit1 keep CS asserted after it. Acted on at I2C STOP |
+| 0x2100-0x22FF | Buffer | R/W | - | Data to send, replaced in place with the received data |
 
 ### GPIO Pin Mapping
 
@@ -65,6 +73,31 @@ The firmware controls 13 GPIO pins through memory-mapped registers. Each bit in 
 The GPIO control uses two 16-bit registers:
 - **Direction register (0x1000-0x1001)**: Controls pin direction (1=output, 0=input)
 - **Data register (0x1002-0x1003)**: Controls pin values, reads pin states for inputs. A value written to an input is kept and used when the pin is made an output, so writing the value before the direction switches a pin to output without a glitch
+
+### SPI Bridge
+
+The SPI bridge lets the host use SPI1 on the deck controller as an SPI master, for instance to program an SPI flash on the deck.
+The pins are PA4 (CS, driven as a GPIO), PA5 (SCK), PA11 (MISO) and PA12 (MOSI). While the bridge is enabled these pins are not
+affected by the GPIO registers (GPIO 4, 5, 9 and 10). When it is disabled they return to the GPIO configuration, inputs by default,
+so another device on the bus can use it.
+
+A transfer is buffered so that I2C reads and writes have no side effects on the SPI bus:
+
+1. Write TX length, RX length and Execute, followed by the bytes to send. Since the header is placed right before the buffer this is one I2C write.
+2. At the I2C STOP the deck controller asserts CS and clocks TX length + RX length bytes. The first TX length bytes are taken from the buffer
+   and the rest are sent as 0xFF. Received byte `i` is stored in buffer position `i`.
+3. CS is released unless bit1 of Execute is set, which allows chaining transfers longer than the buffer. Execute with bit0 cleared only sets CS.
+4. Read the received bytes from the buffer, starting at 0x2100 + TX length for data received after the sent bytes.
+
+If the host starts the next transaction while a transfer is running, SCL is stretched until the transfer is done, so no polling is needed.
+The status register reports a failed transfer (bridge disabled, too long or SPI timeout), in which case CS is released.
+
+Example, reading 256 bytes from an SPI flash at address 0x012000 (I2C write, then I2C read):
+
+```
+write 0x20FB: 04 00  00 01  01  03 01 20 00
+read  0x2104: 256 bytes
+```
 
 ### I2C Protocol
 

@@ -57,6 +57,37 @@ static gpio_entry_t gpio_map[] = {
 // Cache for GPIO direction (1=output, 0=input)
 static uint16_t gpio_direction_cache = 0x0000; // Initialize all as inputs
 static uint16_t gpio_data_cache = 0x0000; // Cache for GPIO output data
+// Pins currently owned by another module (e.g. SPI), these are not touched by GPIO writes
+static uint16_t gpio_reserved_mask = 0x0000;
+
+static void gpio_apply_direction(void)
+{
+    for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
+        if ((gpio_reserved_mask >> gpio_index) & 0x01) {
+            continue;
+        }
+        uint8_t gpio_dir = (gpio_direction_cache >> gpio_index) & 0x01;
+        GPIO_InitTypeDef GPIO_InitStruct;
+        GPIO_InitStruct.Pin = gpio_map[gpio_index].pin;
+        GPIO_InitStruct.Mode = gpio_dir ? GPIO_MODE_OUTPUT_PP : GPIO_MODE_INPUT;
+        GPIO_InitStruct.Pull = GPIO_NOPULL;
+        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        HAL_GPIO_Init(gpio_map[gpio_index].port, &GPIO_InitStruct);
+    }
+}
+
+static void gpio_apply_data(void)
+{
+    // Inputs get their level too: the output latch keeps it, so a pin made an
+    // output afterwards comes up at the level it was given instead of an old one
+    for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
+        if ((gpio_reserved_mask >> gpio_index) & 0x01) {
+            continue;
+        }
+        uint8_t gpio_value = (gpio_data_cache >> gpio_index) & 0x01;
+        HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, gpio_value == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    }
+}
 
 void gpio_module_init(void)
 {
@@ -141,15 +172,7 @@ void gpio_module_write(uint16_t address, uint8_t value)
             gpio_direction_cache = (gpio_direction_cache & 0x00FF) | ((uint16_t)value << 8); // Update high byte
         }
 
-        for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
-            uint8_t gpio_dir = (gpio_direction_cache >> gpio_index) & 0x01;
-            GPIO_InitTypeDef GPIO_InitStruct;
-            GPIO_InitStruct.Pin = gpio_map[gpio_index].pin;
-            GPIO_InitStruct.Mode = gpio_dir ? GPIO_MODE_OUTPUT_PP : GPIO_MODE_INPUT;
-            GPIO_InitStruct.Pull = GPIO_NOPULL;
-            GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-            HAL_GPIO_Init(gpio_map[gpio_index].port, &GPIO_InitStruct);
-        }
+        gpio_apply_direction();
     }
 
     if (address >= GPIO_DATA_START && address <= GPIO_DATA_END)
@@ -163,12 +186,22 @@ void gpio_module_write(uint16_t address, uint8_t value)
         } else {
             gpio_data_cache = (gpio_data_cache & 0x00FF) | ((uint16_t)value << 8); // Update high byte
         }
-        
-        // Inputs get their level too: the output latch keeps it, so a pin made an
-        // output afterwards comes up at the level it was given instead of an old one
-        for (uint8_t gpio_index = 0; gpio_index < sizeof(gpio_map) / sizeof(gpio_entry_t); gpio_index++) {
-            uint8_t gpio_value = (gpio_data_cache >> gpio_index) & 0x01;
-            HAL_GPIO_WritePin(gpio_map[gpio_index].port, gpio_map[gpio_index].pin, gpio_value == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
-        }
+
+        gpio_apply_data();
     }
+}
+
+void gpio_module_reserve(uint16_t mask)
+{
+    gpio_reserved_mask |= mask;
+}
+
+void gpio_module_release(uint16_t mask)
+{
+    gpio_reserved_mask &= ~mask;
+
+    // Restore the configuration requested through the GPIO registers. Level
+    // before direction, so a pin that is restored as an output does not glitch
+    gpio_apply_data();
+    gpio_apply_direction();
 }

@@ -5,9 +5,9 @@
  * | / ,--´  |    / /_/ / / /_/ /__/ /  / /_/ / / /_/  __/
  *    +------`   /_____/_/\__/\___/_/   \__,_/ /___/\___/
  *
- * Memory interface API
+ * SPI bridge module interface
  *
- * Copyright (C) 2025 Bitcraze AB
+ * Copyright (C) 2026 Bitcraze AB
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,19 +27,14 @@
 #pragma once
 
 #include <stdint.h>
-#include <stdbool.h>
 
-void memory_init(void);
+#define SPI_MODULE_SIZE 0x1000
 
-uint8_t memory_read(uint16_t address);
+void spi_module_init(void);
 
-void memory_write(uint16_t address, uint8_t value);
+uint8_t spi_module_read(uint16_t address);
 
-uint8_t memory_get_i2c_address(void);
+void spi_module_write(uint16_t address, uint8_t value);
 
-void memory_set_i2c_address(uint8_t address);
-
-bool memory_check_and_reset_i2c_address_update(void);
-
-// Called from the I2C ISR when a STOP condition ends a transaction to this device
-void memory_on_stop(void);
+// Called on I2C STOP, runs a transfer requested through the EXEC register
+void spi_module_on_stop(void);
